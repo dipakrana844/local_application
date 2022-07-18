@@ -39,7 +39,7 @@ import 'package:sqflite/sqflite.dart';
 		}
 		checkEmail(table, email) async {
 			var loConnection = await database;
-			return await loConnection?.query(table, where: 'id=?', whereArgs: [email]);
+			return await loConnection?.rawQuery("SELECT count(email) from $table where email=$email");
 		}
     
 	}
