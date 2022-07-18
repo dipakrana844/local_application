@@ -28,7 +28,7 @@ class UserService {
   deleteUser(userId) async {
     return await moRepository.deleteDataById('users', userId);
   }
-  CheckEmailVerify(String email) async{
+  checkEmailVerify(String email) async{
     return await moRepository.checkEmail('users', email);
   }
 }

@@ -14,7 +14,7 @@ class User {
     moMapping['contact'] = msContact!;
     moMapping['email'] = msEmail!;
     moMapping['dob'] = msDob!;
-    // moMapping['image'] = msImg!;
+    moMapping['image'] = msImg!;
     return moMapping;
   }
 }

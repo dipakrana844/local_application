@@ -162,25 +162,17 @@ class _EditUserState extends State<EditUser> {
                             ),
                           ),
                           child: ClipOval(
-                            child: moPickedImage != null
+                            child: msImagePath != ''
                                 ? Image.file(
                                     moPickedImage!,
                                     width: 150,
                                     height: 150,
                                     fit: BoxFit.cover,
                                   )
-                                :
-                            // const Icon(
-                            //         Icons.person,
-                            //         color: Colors.teal,
-                            //         size: 100,
-                            //       ),
-
-                            Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
-                                    width: 170,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                : const Icon(
+                                    Icons.person,
+                                    color: Colors.teal,
+                                    size: 150,
                                   ),
                           ),
                         ),

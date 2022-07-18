@@ -16,13 +16,13 @@ class ViewUser extends StatefulWidget {
 }
 
 class _ViewUserState extends State<ViewUser> {
-  // String imagePath = User().msImg!;
   File? moPickedImage;
   String msImagePath = "";
 
   @override
   void initState() {
     setState(() {
+      msImagePath = widget.moUser.msImg!;
       moPickedImage = File(widget.moUser.msImg!);
     });
     super.initState();
@@ -57,25 +57,17 @@ class _ViewUserState extends State<ViewUser> {
                             ),
                           ),
                           child: ClipOval(
-                            child: moPickedImage != null
+                            child: msImagePath != ''
                                 ? Image.file(
                                     moPickedImage!,
                                     width: 150,
                                     height: 150,
                                     fit: BoxFit.cover,
                                   )
-                                :
-                            // const Icon(
-                            //         Icons.person,
-                            //         color: Colors.teal,
-                            //         size: 100,
-                            //       ),
-
-                            Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
-                                    width: 170,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                : const Icon(
+                                    Icons.person,
+                                    color: Colors.teal,
+                                    size: 150,
                                   ),
                           ),
                         ),
@@ -142,6 +134,23 @@ class _ViewUserState extends State<ViewUser> {
                   ),
                   // )
                 ],
+              ),
+              Row(
+                children: [
+                  const Text('User Id',
+                      style: TextStyle(
+                          color: Colors.teal,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600)),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Text(widget.moUser.miId.toString(),
+                        style: const TextStyle(fontSize: 16)),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
               ),
               Row(
                 children: [
@@ -223,21 +232,21 @@ class _ViewUserState extends State<ViewUser> {
               const SizedBox(
                 height: 20,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Image',
-                      style: TextStyle(
-                          color: Colors.teal,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600)),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(widget.moUser.msImg ?? '',
-                      style: const TextStyle(fontSize: 16)),
-                ],
-              )
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     const Text('Image',
+              //         style: TextStyle(
+              //             color: Colors.teal,
+              //             fontSize: 16,
+              //             fontWeight: FontWeight.w600)),
+              //     const SizedBox(
+              //       height: 20,
+              //     ),
+              //     Text(widget.moUser.msImg ?? '',
+              //         style: const TextStyle(fontSize: 16)),
+              //   ],
+              // )
             ],
           ),
         ));

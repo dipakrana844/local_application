@@ -195,13 +195,6 @@ class _AddUserState extends State<AddUser> {
                                     color: Colors.teal,
                                     size: 150,
                                   ),
-
-                            // Image.network(
-                            //         'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
-                            //         width: 170,
-                            //         height: 170,
-                            //         fit: BoxFit.cover,
-                            //       ),
                           ),
                         ),
                         Positioned(
@@ -381,8 +374,8 @@ class _AddUserState extends State<AddUser> {
                               .hasMatch(moUserEmailController.text)) {
                             msValidateEmail = "Please enter valid email";
                           }
-                          // else if(){
-                          //
+                          // else if(moUserService.checkEmailVerify(moUserEmailController.text)){
+                          //   msValidateEmail = "Email Already Exists";
                           // }
                           else {
                             msValidateEmail = null;
